@@ -3,6 +3,7 @@ from django.contrib.auth.forms import UserCreationForm, AuthenticationForm
 from django.contrib.auth.models import User
 from django.db import IntegrityError
 from django.contrib.auth import login, logout, authenticate
+from .forms import TodoForm
 # Create your views here.
 
 def home(request):
@@ -38,6 +39,19 @@ def logoutuser(request):
     if request.method == 'POST':
         logout(request)
         return redirect('home')
+
+def createtodo(request):
+    if request.method == 'GET':
+        return render(request, 'todo/createtodo.html', {'form': TodoForm()})
+    else:
+        try:
+            form = TodoForm(request.POST)
+            newtodo = form.save(commit=False) #сохраняет данные введенные пользователем в базу данных
+            newtodo.user=request.user
+            newtodo.save()
+            return redirect('curenttodos') #перенаправит на список записей
+        except ValueError:
+            return render(request, 'todo/createtodo.html', {'form': TodoForm(), 'error': 'Big data passed in. Thy again'})
 
 def curenttodos(request):
     return render(request, 'todo/curenttodos.html')
