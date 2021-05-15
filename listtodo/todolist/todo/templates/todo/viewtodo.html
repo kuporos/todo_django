@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+{% extends 'todo/base.html' %}
+{% block content %}
+
+    {{ error }}
+{{ todo.title }}
+<form method="POST">
+{% csrf_token %}
+{{ form.as_p }}
+<button type="submit">Save</button>
+</form>
+
+
+{#    <h3>Task: {{ todos2.title }}</h3>#}
+{#    <h3>Comments: {{ todos2.memo }}</h3>#}
+{#    <h3>Date of creation: {{ todos2.date_created }}</h3>#}
+{#    <h3>Date completed: {{ todos2.date_comleted }}</h3>#}
+{#    <h3>Importance: {{ todos2.imported }}</h3>#}
+
+
+{% endblock %}
+
+</body>
+</html>

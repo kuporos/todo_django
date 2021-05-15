@@ -9,7 +9,24 @@
 {% extends 'todo/base.html' %}
 {% block content %}
 Current
+
+<ol>
+    {% for tod in todos %}
+
+        <li>{% if tod.imported %}<b> <a href =" {% url 'viewtodo' tod.id %}">{{ tod.title }} </a></b>{% else %} <a href =" {% url 'viewtodo' tod.id %}">{{ tod.title }} </a>{%  endif %}
+        {% if tod.memo %} - {{ tod.memo }}{% endif %}</li>
+
+    {% endfor %}
+</ol>
 {% endblock %}
 
 </body>
 </html>
+
+
+{#<ul>#}
+{#    {% for tod in todos %}#}
+{#        <li>{% if tod.imported %}<b><a href="{% url 'viewtodo' tod.id %}" >{{ tod.title }}</a></b>{% else %} <a href="{% url 'viewtodo' tod.id %}" >{{ tod.title }}</a> {%  endif %}#}
+{#        {% if tod.memo %} - {{ tod.memo }}{% endif %}</li>#}
+{#    {% endfor %}#}
+{#</ul>#}

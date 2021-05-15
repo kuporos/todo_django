@@ -5,7 +5,7 @@ from django.contrib.auth.models import User
 class Todo (models.Model):
     title = models.CharField(max_length=255)
     memo= models.TextField(blank=True) #не обязательно к заполнению
-    date_created=models.DateTimeField(auto_now_add=False)
+    date_created=models.DateTimeField(auto_now_add=True)
     date_comleted=models.DateTimeField(null=True, blank=True)
     imported=models.BooleanField(default=False)
     user=models.ForeignKey(User, on_delete=models.CASCADE)
