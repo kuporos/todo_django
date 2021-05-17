@@ -4,11 +4,51 @@
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
-<body>
-
-{% extends 'todo/base.html' %}
+<body >
+<div style="background-color: palevioletred; height: 90px">
+{% extends "todo/base.html" %}
 {% block content %}
-Home
+    </div>
+
+<div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
+
+                 <h1>Simply Your Todos. Woo!</h1>
+            <p>Life is fun. But life is also busy. There's a million different things you could be doing. But what matters is <u>what</u> you do. We created <b><i>Todo Woo</i></b> to help you make sense of all of your opportunities and live that life that matters most to you. Your new organized life awaits.</p>
+        <a role="button" class="btn btn-danger btn-lg" style="background-color: palevioletred" href="{% url 'signupuser' %}">Let's start</a>
+        </div>
+    </div>
+
+    <div class="container">
+    <br>
+  <div class="row">
+    <div class="col-sm">
+<div class="card" >
+  <img src="https://im0-tub-by.yandex.net/i?id=596e865565bae7d28b436281d7a07e66&n=13" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text" align="center">Are you angry?</p>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+<div class="card" >
+  <img src="https://i04.fotocdn.net/s129/68495db7d5e0809b/public_pin_l/2922881836.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text" align="center">Are you curious?</p>
+  </div>
+</div>
+    </div>
+    <div class="col-sm">
+<div class="card" >
+  <img src="https://4tololo.ru/sites/default/files/inline/images/2020/06/23-1530-1036993587.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <p class="card-text" align="center">Are you lazy?</p>
+  </div>
+</div>
+    </div>
+  </div>
+</div>
+
 {% endblock %}
 
 </body>

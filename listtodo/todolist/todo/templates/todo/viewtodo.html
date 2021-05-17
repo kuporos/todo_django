@@ -4,28 +4,44 @@
     <meta charset="UTF-8">
     <title>Title</title>
 </head>
-<body>
+<body style="background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612752338_96-p-goluboi-fon-s-lapkami-141.jpg)">
 
 {% extends 'todo/base.html' %}
 {% block content %}
 
     {{ error }}
-{{ todo.title }}
+{#{{ todo.title }}#}
+    <br>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
+    <div class="container" style="background-color: ghostwhite">
+    <br>
 <form method="POST">
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Save</button>
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred; width: 150px" >Save</button>
 </form>
 
-<form method="POST" action="{% url 'compleatetodo' todo.id %}">
-    {% csrf_token %}
-    <button type="submit">Compele</button>
-</form>
+{#   <a role="button" class="btn btn-danger btn-lg" style="background-color: palevioletred" href="{% url 'signupuser' %}">Let's start</a>#}
 
-<form method="POST" action="{% url 'deletetodo' todo.id %}">
+<div class="container">
+  <div class="row">
+    <div class="col-sm">
+      <form method="POST" action="{% url 'compleatetodo' todo.id %}">
     {% csrf_token %}
-    <button type="submit">Delete</button>
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred; width: 150px">Compele</button>
 </form>
+    </div>
+    <div class="col-sm">
+      <form method="POST" action="{% url 'deletetodo' todo.id %}">
+    {% csrf_token %}
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred; width: 150px">Delete</button>
+</form>
+    </div>
+  </div>
+</div>
+
+
 
 {#    <h3>Task: {{ todos2.title }}</h3>#}
 {#    <h3>Comments: {{ todos2.memo }}</h3>#}
@@ -33,8 +49,8 @@
 {#    <h3>Date completed: {{ todos2.date_comleted }}</h3>#}
 {#    <h3>Importance: {{ todos2.imported }}</h3>#}
 
-
+<br>
 {% endblock %}
-
+</div></div></div>
 </body>
 </html>

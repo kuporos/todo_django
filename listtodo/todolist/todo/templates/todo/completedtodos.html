@@ -4,17 +4,23 @@
     <meta charset="UTF-8">
     <title>Completedtodos</title>
 </head>
-<body>
+<body style="background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612752338_96-p-goluboi-fon-s-lapkami-141.jpg)">
 
 {% extends 'todo/base.html' %}
 {% block content %}
-Completed
+    <br>
+{#    <div class="row justify-content-center mt-4">#}
+{#        <div class="col-md-8 text-center">#}
+    <div class="container" style="background-color: aliceblue">
+    <br>
+    <h1 align="center">Completed</h1>
+<br>
 
 <ol>
     {% for todo in todos %}
 
         <li>
-            <a href =" {% url 'viewtodo' todo.id %}">
+            <a href =" {% url 'viewtodo' todo.id %}" style="color: black">
                 {% if todo.imported %}<b>
                     {{ todo.title }} </b>
                 {% else %} {{ todo.title }} {%  endif %}
@@ -23,10 +29,10 @@ Completed
             </a></li>
 
     {% endfor %}
-</ol>
+</ol><br>
 
 {% endblock %}
-
+</div>
 
 </body>
 </html>

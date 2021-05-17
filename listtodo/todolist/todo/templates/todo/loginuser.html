@@ -5,20 +5,24 @@
     <title>LoginUser</title>
 </head>
 <body>
-
+<div style="background-color: palevioletred; height: 90px">
 {% extends 'todo/base.html' %}
 {% block content %}
+    </div>
+    <div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
 
 <h1>Login</h1>
 
 <h2>{{ error }}</h2>
 
-<form method="POST" >
+<form method="POST" ><br>
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Login</button>
-</form>
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred">Login</button>
 
+</form>
+        </div></div>
 {% endblock %}
 
 </body>

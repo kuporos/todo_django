@@ -4,22 +4,29 @@
     <meta charset="UTF-8">
     <title>Curenttodos</title>
 </head>
-<body>
+<body style="background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612752338_96-p-goluboi-fon-s-lapkami-141.jpg)">
 
 {% extends 'todo/base.html' %}
 {% block content %}
-Current
+<br>
+
+{#<div class="row justify-content-center mt-4">#}
+{#        <div class="col-md-8 text-center">#}
+    <div class="container" style="background-color: azure">
+  <br>
+    <h1 align="center">      Current</h1>
 
 <ol>
     {% for tod in todos %}
 
-        <li>{% if tod.imported %}<b> <a href =" {% url 'viewtodo' tod.id %}">{{ tod.title }} </a></b>{% else %} <a href =" {% url 'viewtodo' tod.id %}">{{ tod.title }} </a>{%  endif %}
+        <li>{% if tod.imported %}<b> <a href =" {% url 'viewtodo' tod.id %}" style="color: black">{{ tod.title }} </a></b>{% else %} <a href =" {% url 'viewtodo' tod.id %}" style="color: black">{{ tod.title }} </a>{%  endif %}
         {% if tod.memo %} - {{ tod.memo }}{% endif %}</li>
 
     {% endfor %}
-</ol>
+<br></ol>
 {% endblock %}
-
+</div>
+{#</div></div>#}
 </body>
 </html>
 

@@ -5,20 +5,63 @@
     <title>Signuser</title>
 </head>
 <body>
-
+<div style="background-color: palevioletred; height: 90px">
 {% extends 'todo/base.html' %}
 {% block content %}
+    </div>
+<div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
 
 <h1>Sign Up</h1>
 
 <h2>{{ error }}</h2>
+<br>
 
 <form method="POST" >
     {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Sign Up</button>
+
+
+
+{#    {{ form.as_p }}#}
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm" align="right">
+      Username:
+    </div>
+    <div class="col-sm">
+      {{ form.username }}
+    </div>
+  </div> <br>
+</div>
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm" align="right">
+      Password:
+    </div>
+    <div class="col-sm">
+      {{ form.password1 }}
+    </div>
+  </div> <br>
+</div>
+
+    <div class="container">
+  <div class="row">
+    <div class="col-sm" align="right">
+      Password confirmation:
+    </div>
+    <div class="col-sm">
+      {{ form.password2 }}
+    </div>
+  </div>
+</div> <br>
+
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred">Sign Up</button>
+
 </form>
 
+    </div></div>
 {% endblock %}
 </body>
 </html>

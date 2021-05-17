@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <title>CreateToDo</title>
 </head>
-<body>
+<body style="background-image: url(https://catherineasquithgallery.com/uploads/posts/2021-02/1612752338_96-p-goluboi-fon-s-lapkami-141.jpg)">
 
 {% extends 'todo/base.html' %}
 {% block content %}
-
+<div class="row justify-content-center mt-4">
+        <div class="col-md-8 text-center">
+    <div class="container" style="background-color: ghostwhite">
+        <br>
 <h1>Create</h1>
 
 <h2>{{ error }}</h2>
@@ -16,11 +19,11 @@
 <form method="POST" >
     {% csrf_token %}
     {{ form.as_p }}
-    <button type="submit">Create</button>
-</form>
-
+    <button type="submit" class="btn btn-danger btn-lg" style="background-color: palevioletred">Create</button>
+    </form>
+        <br>
+</div></div></div>
 {% endblock %}
-
 
 </body>
 </html>
